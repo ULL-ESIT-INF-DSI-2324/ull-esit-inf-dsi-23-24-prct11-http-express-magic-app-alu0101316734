@@ -1,0 +1,44 @@
+{
+  "name": "ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-alu0101316734",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/a4IaLRGZ)",
+  "main": "index2.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \"node dist/index2.js\"",
+    "test": "mocha",
+    "prueba": "c8 npm test",
+    "coverage": "c8 npm test && c8 report --reporter=lcov",
+    "doc": "typedoc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/express": "^4.17.21",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "@types/sinon": "^17.0.3",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "c8": "^9.1.0",
+    "chai": "^5.1.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "mocha": "^10.3.0",
+    "prettier": "^3.2.5",
+    "sinon": "^17.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.0.4",
+    "typedoc": "^0.25.8",
+    "typedoc-plugin-extras": "^3.0.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "express": "^4.19.2",
+    "yargs": "^17.7.2"
+  }
+}
