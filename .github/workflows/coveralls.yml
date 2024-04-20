@@ -29,6 +29,7 @@ jobs:
     - run: node dist/index.js &
     - name: Generating coverage information
       run: npm run coverage
+    - run: rm -r usuarios/errror
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.2.3
       with:
