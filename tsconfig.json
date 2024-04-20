@@ -7,7 +7,6 @@
      "declaration": true,
      "rootDir": "./src",
      "outDir": "./dist",
-     "noImplicitAny": true,
      "noImplicitReturns": true,
      "strictNullChecks": true,
      "moduleResolution": "NodeNext",
