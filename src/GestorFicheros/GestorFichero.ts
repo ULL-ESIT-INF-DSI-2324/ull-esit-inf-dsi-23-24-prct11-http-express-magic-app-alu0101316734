@@ -1,9 +1,7 @@
 import fs from 'fs'
 import { Carta } from '../Cartas/Carta.js'
-import chalk from 'chalk'
 import { Carta_Planeswalker } from '../Cartas/Carta_Planeswalker.js'
 import { Carta_Criatura } from '../Cartas/Carta_Criatura.js'
-import { type } from 'os'
 
 /**
  * @type __Union__ Es la union del tipo de cartas  y indefinido */
