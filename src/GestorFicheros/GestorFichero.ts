@@ -315,14 +315,14 @@ search_archivo(path:string, id_buscar:number, callback:(err:Error |undefined,car
                       /**Comprobamos que es una criatura */
                       if(carta instanceof Carta_Criatura)
                       {
-                        if(nombreAtributo === 'fuerza')
+                        if(nombreAtributo === 'fuerza' && valorNuevo !== undefined)
                           carta.estadistica[0]=valorNuevo
                         else if(nombreAtributo === 'vida')
                           carta.estadistica[1]=valorNuevo
                       }
                       /** Comprobamos que es un planeswalker */
                       if( carta instanceof Carta_Planeswalker)
-                        if(nombreAtributo === 'lealtad')
+                        if(nombreAtributo === 'lealtad'&& valorNuevo !== undefined)
                           carta.lealtad=valorNuevo
                     }
                     const stringJSON=JSON.stringify(carta)
