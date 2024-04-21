@@ -26,8 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: mkdir usuarios/errror
-    - run: chmod 444 usuarios/errror
+    - run: mkdir ./usuarios/errror
+    - run: chmod 444 ./usuarios/errror
     - run: tsc
     - run: node dist/index.js &
     - run: npm test

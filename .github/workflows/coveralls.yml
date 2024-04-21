@@ -23,8 +23,8 @@ jobs:
         node-version: 21.x
     - name: Installing dependencies
       run: npm ci
-    - run: mkdir usuarios/errror
-    - run: chmod 444 usuarios/errror
+    - run: mkdir ./usuarios/errror
+    - run: chmod 444 ./usuarios/errror
     - run: tsc
     - run: node dist/index.js &
     - name: Generating coverage information
