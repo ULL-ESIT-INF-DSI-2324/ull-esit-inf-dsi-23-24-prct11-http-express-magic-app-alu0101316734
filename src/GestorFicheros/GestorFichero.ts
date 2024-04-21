@@ -3,10 +3,16 @@ import { Carta } from '../Cartas/Carta.js'
 import chalk from 'chalk'
 import { Carta_Planeswalker } from '../Cartas/Carta_Planeswalker.js'
 import { Carta_Criatura } from '../Cartas/Carta_Criatura.js'
+import { type } from 'os'
 
 /**
  * @type __Union__ Es la union del tipo de cartas  y indefinido */
 export type Union = Carta | Carta_Criatura | Carta_Planeswalker |undefined
+
+/**
+ * @type __Unionsin__ Es la union del tipo de cartas  sin undefiend */
+export type Unionsin = Carta | Carta_Criatura | Carta_Planeswalker
+
 
 /**@type __stats__ Los stats de las  criaturas */
 export type stats = [number,number]
@@ -39,7 +45,7 @@ class GestorFichero
      * @param Carta nueva carta a añadir
      * @param callback gestiona errores de manera asincrona
      *   */
-    public escribir_archivo(Carta:Carta | Carta_Criatura | Carta_Planeswalker,callback:(err:Error | undefined) => void) {
+    public escribir_archivo(Carta:Unionsin,callback:(err:Error | undefined) => void) {
         //Parseamos un archo
         const data = JSON.stringify(Carta)
         fs.access('./usuarios/'+ this.nombre_usuario,(err) =>{
@@ -109,7 +115,7 @@ class GestorFichero
     
     
                             const argv = JSON.parse(data.toString());
-                            let carta:Carta_Planeswalker | Carta | Carta_Criatura;
+                            let carta:Unionsin;
     
     
                             if (argv.estadistica !== undefined && argv.lealtad === undefined) {
@@ -258,7 +264,7 @@ search_archivo(path:string, id_buscar:number, callback:(err:Error |undefined,car
            else
            {
              archivos.forEach(element => {
-               let carta:Carta | Carta_Planeswalker | Carta_Criatura;
+               let carta:Unionsin;
                fs.readFile(path + '/' +element,(err,data)=>{
                 if(err)
                 {
