@@ -25,7 +25,7 @@ export interface atributos_modificar
   estadistica?:stats;
   lealtad?:number
 }  
-
+/** @class __GestorFichero__ clase en donde gestinaremos los ficheros de la carta */
 class GestorFichero
 {
      /**
@@ -109,7 +109,7 @@ class GestorFichero
     
     
                             const argv = JSON.parse(data.toString());
-                            let carta;
+                            let carta:Carta_Planeswalker | Carta | Carta_Criatura;
     
     
                             if (argv.estadistica !== undefined && argv.lealtad === undefined) {
@@ -279,6 +279,10 @@ search_archivo(path:string, id_buscar:number, callback:(err:Error |undefined,car
                         //La carta que tenemos que cambiar
                    if(carta.ID === id)
                    {
+                    /**
+                     * @const nombreAtributo el nombre del atributo que queremos cambiar 
+                     * @const valorNuevo el valor que queremos insertar al atributo nuevo 
+                     * */
                      for (const [nombreAtributo, valorNuevo] of Object.entries(atributos)) {
                       if(valorNuevo !== undefined)
                       switch(nombreAtributo)

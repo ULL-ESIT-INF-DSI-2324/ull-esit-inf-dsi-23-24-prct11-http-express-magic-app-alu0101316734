@@ -4,28 +4,31 @@ import { Carta } from "../Cartas/Carta.js";
 import { GestorFichero, Union, atributos_modificar } from "../GestorFicheros/GestorFichero.js";
 import { Carta_Criatura } from "../Cartas/Carta_Criatura.js";
 import { Carta_Planeswalker } from "../Cartas/Carta_Planeswalker.js";
-import chalk from "chalk";
 
 
-
+/**@class clase servidor que nos sirve para conectarnos */
 class Server{
+  /**@private __app__ variable en la cual almacenaremos nuestra app */
     private app:Application;
+    /**
+     * @constructor recibe el puerto donde se conecta el servidor  además llamaos a configure
+     * */
  constructor( private port:number)
  {
     this.app=express()
     this.configure()
  }
-
+  /**@private __configure__ llamaos a `express.json()` para pasarlo a objeto */
   private configure():void
   {
     this.app.use(express.json())
   }
-
+  /**@private los verbos para cada uno de las acciones que hacer  */
   private verbos():void
   {
     
     this.app.post('/cards',(rep:Request,res:Response)=>{
-        
+        /**@const data aqui almacenamos el cuerpo y lo parseamos automaticamente */
         const data = rep.body
         let user:string="";
         if(rep.query.user)
@@ -34,6 +37,7 @@ class Server{
         }else{
           res.status(400).send('User not especific')
         }
+        /**@const gestor creamos una instancia del usuario  */
         const gestor= new GestorFichero(user)
         let carta:Union;
         if(data)
@@ -68,7 +72,7 @@ class Server{
       if (!req.query.user) {
           res.status(400).send('User not specified');
       }
-  
+      /**@const user pasamos el query de l usuairo a string  */
       const user: string = req.query.user as string;
       const gestor = new GestorFichero(user);
   
@@ -160,6 +164,7 @@ class Server{
         }
       })
     })
+
     this.app.patch('/cards',(req:Request,res:Response)=>{
       let user:string='';
       let id:number=0;
@@ -197,6 +202,7 @@ class Server{
       return;
     })
   }
+  /**@public sirve para iniciar el servidor y llamar al verbo y escuchamos en el puerto especifico  */
  public start():void
  {
     this.verbos();
