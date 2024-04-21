@@ -324,7 +324,7 @@ Se gestiona usando el verbo `get` y pasando en el query el usuario ejemplo:
 
 `http://localhost:3000/cards?user=emilio`
 
-### Search 
+### Search
 
 Se gestiona usando el verbo `get` y pasando en el query el usuario y el id de la carta a buscar ejemplo:
 
@@ -354,4 +354,14 @@ Para esta practica hemos hecho los test usando el paquete `request` este paquete
 
 ## Conclusines
 
-En esta práctica nos hemos centrado en uso de express y ultlizar tambien `request`.También usamos thunder client para comprobar el funcioanmiento de la misma.Si bien el uso de express y el uso de thunder client no fue muy complicado si fue un poco más díficil usar el paquete `request` porque cuando enviaba un error de status request no lo interpretaba como error si no como una respuesta.El gestor de ficheros lo reultlice de la práctica pasada, en general no ha sido una practica díficil
+En esta práctica nos hemos centrado en uso de express y ultlizar tambien `request`.También usamos thunder client para comprobar el funcioanmiento de la misma.Si bien el uso de express y el uso de thunder client no fue muy complicado si fue un poco más díficil usar el paquete `request` porque cuando enviaba un error de status request no lo interpretaba como error si no como una respuesta.El gestor de ficheros lo reultlice de la práctica pasada, en general no ha sido una practica díficil.
+
+## Bibliografia
+
+[typedoc] (https://typedoc.org)
+
+[typescript] (https://www.typescriptlang.org/docs/)
+
+[nodejs] (https://nodejs.org/en)
+
+[javascript] (https://developer.mozilla.org/es/docs/Web/JavaScript)

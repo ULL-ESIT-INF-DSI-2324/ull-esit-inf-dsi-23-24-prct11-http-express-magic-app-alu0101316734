@@ -189,7 +189,7 @@ search_archivo(path:string, id_buscar:number, callback:(err:Error |undefined,car
      /**
      * @public para borrar un archivo en la carpeta del usuario
      * @param path ruta donde esta el usuario
-     * @param id_buscar el id de la carta que queremos borrar
+     * @param id el id de la carta que queremos borrar
      * @param callback gestiona errores de manera asincrona
      *   */   
   borrar_archivo(path:string,id:number,callback:(err:Error | undefined)=>void)
@@ -239,7 +239,7 @@ search_archivo(path:string, id_buscar:number, callback:(err:Error |undefined,car
      * @public para buscar un archivo en la carpeta del usuario
      * @param path ruta donde esta el usuario
      *  @param atributos atributos que queremos modificar
-     * @param id_buscar el id de la carta que queremos modifcar
+     * @param id el id de la carta que queremos modifcar
      * @param callback gestiona errores de manera asincrona y el dato de manera asincorna
      *   */   
   modificar_archivo(path:string,id:number,atributos:atributos_modificar,callback:(err:Error|undefined)=>void)
